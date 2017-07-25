@@ -35,7 +35,7 @@ public class CucumberSteps
 
 
 
-    @Given("^I navigate to \"([^\"]*)\"$")
+    @Given("^I navigate to \"([^\"]*)\"")
     public void i_navigate_to(String page) throws Throwable {
         System.setProperty("webdriver.gecko.driver", "/Users/satish/Downloads/geckodriver");
         DesiredCapabilities capabilities= DesiredCapabilities.firefox();
@@ -44,13 +44,13 @@ public class CucumberSteps
         driver.get(page);
     }
 
-    @When("^I take a look at the Docs$")
+    @When("^I take a look at the Docs")
     public void i_take_a_look_at_the_docs() throws Throwable {
         WebElement element = driver.findElement(By.linkText("Docs"));
         element.click();
     }
 
-    @Then("^I see a browser title containing \"([^\"]*)\"$")
+    @Then("^I see a browser title containing \"([^\"]*)\"")
     public void i_see_a_browser_title_containing(String text) throws Throwable {
         assertTrue(driver.getTitle().contains(text));
         driver.quit();
