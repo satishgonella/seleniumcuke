@@ -39,7 +39,6 @@ public class CucumberSteps
     public void i_navigate_to(String page) throws Throwable {
         System.setProperty("webdriver.gecko.driver", "/Users/satish/Downloads/geckodriver");
         DesiredCapabilities capabilities= DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", true);
         driver = new FirefoxDriver(capabilities);
         driver.get(page);
     }
@@ -53,8 +52,10 @@ public class CucumberSteps
     @Then("^I see a browser title containing \"([^\"]*)\"")
     public void i_see_a_browser_title_containing(String text) throws Throwable {
         assertTrue(driver.getTitle().contains(text));
-        driver.quit();
+//        driver.quit();
     }
+
+
 
 
 
